@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  solr:
+    image: wachira90/solr:8.9.0
+    ports:
+     - "8983:8983"
+    volumes:
+      - data:/var/solr
+    command:
+      - solr-precreate
+      - gettingstarted
+      
+volumes:
+  data:
