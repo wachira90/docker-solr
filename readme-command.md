@@ -13,6 +13,12 @@ bin\solr status
 
 ```
 
+## stop
+
+```
+bin\solr.cmd stop -all
+```
+
 ## Start Solr with a Specific Bundled Example "techproducts"
 ```
 bin/solr -e techproducts
