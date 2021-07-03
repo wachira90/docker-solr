@@ -35,7 +35,24 @@ Define /dataimport request handler
   </document>
 </dataConfig>
 ```
-
+  
+for sqlserver
+  
+```
+  
+<dataConfig>
+	<dataSource type="JdbcDataSource" name="sql" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" url="jdbc:sqlserver://localhost;databaseName=AdventureWorks2008;integratedSecurity=true;"/>
+	<document>
+		<entity name="Person" dataSource="sql" pk="BusinessEntityID" query="select BusinessEntityID,FirstName,LastName FROM [Person].[Person]" deltaImportQuery="select BusinessEntityID,FirstName,LastName FROM [Person].[Person] WHERE id='${dih.delta.id}'" deltaQuery="SELECT BusinessEntityID FROM [Person].[Person] WHERE ModifiedDate > '${dih.last_index_time}'">
+			<field column="BusinessEntityID" name="id"/>
+			<field column="FirstName" name="firstname"/>
+			<field column="LastName" name="lastname"/>
+		</entity>
+	</document>
+</dataConfig>
+  
+```
+  
 3. Edit managed-schema file, or if it doesn’t exist, then create schema.xml file. The incoming fields defined in Step 2 need to be made recognizable by Solr. Every incoming field needs to be map it to the Solr   recognizable datatype, so that it can parse the data.
 
 When editing managed-schema file, then add the fields defined above –
