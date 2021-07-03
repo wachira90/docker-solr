@@ -54,3 +54,16 @@ https://jdbc.postgresql.org/download/postgresql-42.2.22.jar
   
 https://jdbc.postgresql.org/download/postgresql-42.2.2.jar
 ```
+  
+  
+****
+TIP :
+  
+Only Windows Server 2003 supports large page memory. In order to use it, the administrator must first assign additional privilege to the user who will be running the application:
+  
+1. select Control Panel -> Administrative Tools -> Local Security Policy 
+2. select Local Policies -> User Rights Assignment 
+3. double click "Lock pages in memory", add users and/or groups 
+4. reboot the machine
+  
+****
