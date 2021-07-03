@@ -14,11 +14,10 @@ Define /dataimport request handler
 
 ```
 <!– A request handler for data import handler –>
-<requestHandler name="/dataimport"
-class="org.apache.solr.handler.dataimport.DataImportHandler">
-<lst name="defaults">
-<str name="config">data-config.xml</str>
-</lst>
+<requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
+  <lst name="defaults">
+    <str name="config">data-config.xml</str>
+  </lst>
 </requestHandler>
 ```
 
@@ -26,14 +25,14 @@ class="org.apache.solr.handler.dataimport.DataImportHandler">
 
 ```
 <dataConfig>
-<dataSource type="JdbcDataSource" name="imdb-title-rating" driver="org.postgresql.Driver" url="jdbc:postgresql://127.0.0.1:5432/imdb" user="postgrestest" password="test" />
-<document name="title_rating">
-<entity name="rating" query="SELECT * FROM title_ratings;">
-<field column="tconst" name="tconst" />
-<field column="averagerating" name="averageRating" />
-<field column="numvotes" name="numVotes" />
-</entity>
-</document>
+  <dataSource type="JdbcDataSource" name="imdb-title-rating" driver="org.postgresql.Driver" url="jdbc:postgresql://127.0.0.1:5432/imdb" user="postgrestest" password="test" />
+  <document name="title_rating">
+    <entity name="rating" query="SELECT * FROM title_ratings;">
+      <field column="tconst" name="tconst" />
+      <field column="averagerating" name="averageRating" />
+      <field column="numvotes" name="numVotes" />
+    </entity>
+  </document>
 </dataConfig>
 ```
 
