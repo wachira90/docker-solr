@@ -1,4 +1,4 @@
-# solr-install load data from database
+# solr-install load data from database ( ok test )
 
 ## 1. edit file location => C:\solr-8.2.0\server\solr\db\conf\solrconfig.xml
 ```
