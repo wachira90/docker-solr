@@ -71,8 +71,19 @@ https://jdbc.postgresql.org/download/postgresql-42.2.22.jar
   
 https://jdbc.postgresql.org/download/postgresql-42.2.2.jar
 ```
-  
-  
+### copy import db from template to new core 
+```
+C:\solr-8.2.0>bin\solr create_core -c dbpgsql -d server\solr\db\conf -p 8983
+
+Created new core 'dbpgsql'
+
+C:\solr-8.2.0>bin\solr create_core -c dbmysql -d server\solr\db\conf -p 8983
+
+Created new core 'dbmysql'
+
+C:\solr-8.2.0>
+```	
+	
 ****
 TIP :
   
